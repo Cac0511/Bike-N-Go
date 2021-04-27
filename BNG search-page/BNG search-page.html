@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeNGo</title>
+
+
+    <link rel="stylesheet" href="./bootstrap-4.6.0-dist/js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
+
+    <style>
+        body {
+            /* max-width: 1920px; */
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #003366;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* 以下navBar */
+
+        /* .navBarOutVv {
+            max-width: 1220px;
+            position: relative;
+        } */
+
+        .navBarVv {
+            max-width: 1220px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px auto;
+            font-size: 16px;
+            color: #003366;
+            position: relative;
+            /* padding: 0px 40px; */
+            /* margin: 40px 350px; */
+        }
+
+        /* .hideNav {
+            transform: translateY(-135px);
+        } */
+
+        .navBarRightVv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainMenuVv {
+            margin-left: auto;
+        }
+
+        .mainMenuVv>ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+            margin: 0px 40px;
+        }
+
+        .mainMenuVv>ul>li {
+            margin: 0px 10px;
+        }
+
+        .iconWrapVv {
+            margin-left: auto;
+        }
+
+        .iconWrapVv>ul {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0px;
+            /* position: relative; */
+        }
+
+        .iconWrapVv>ul>li {
+            margin: 10px;
+            width: 35px;
+            height: 35px;
+        }
+
+        .dropDownAccountVv {
+            display: block;
+            position: absolute;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 2rem;
+            border: 1px solid #003366;
+            padding: 0px 20px;
+            border-radius: 10px;
+            right: 0;
+            height: 102px;
+            overflow: hidden;
+            transition: height .3s ease-in, border .25s linear;
+        }
+
+        /* 兩個class name中間沒有空格表示有A及B才生效;
+         兩個class name中間沒有空格表示有A或B都生效;*/
+        .dropDownAccountVv.hide {
+            /* display: none; */
+            height: 0px;
+            border: 0px solid #003366;
+        }
+
+
+        .memberVvSubMenu {
+            transition: .3s;
+            height: 132px;
+            /* overflow: hidden; */
+        }
+
+        .memberVvSubMenu.hide {
+            /* display: none; */
+            height: 0px;
+            /* overflow: hidden; */
+        }
+
+        .dropDownAccountVv li {
+            border-bottom: 1px solid #003366;
+        }
+
+        .dropDownAccountVv ul li:nth-child(1) {
+            border-top: 1px solid #003366;
+        }
+
+        .dropDownAccountVv ul li:nth-child(4) {
+            border-bottom: none;
+        }
+
+        .dropDownAccountVv>li:nth-child(3) {
+            border-bottom: none;
+        }
+
+        .dropDownCartVv {
+            display: block;
+            /* display: none; */
+            position: absolute;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 2rem;
+            border: 1px solid #003366;
+            padding: 0px 20px;
+            border-radius: 10px;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            transition: height .3s ease-in, border .25s linear;
+        }
+
+        .dropDownCartVv.hide {
+            /* display: none; */
+            height: 0px;
+            border: 0px solid #003366;
+        }
+
+        .dropDownCartVv li {
+            border-bottom: 1px solid #003366;
+        }
+
+        .dropDownCartVv>li:nth-child(3) {
+            border-bottom: none;
+        }
+
+        .menuIconVv {
+            display: none;
+        }
+
+        .menuIconVv.hide {
+            display: none;
+        }
+
+        /* .accountShow {
+            transition: 0s;
+        } */
+
+        .cartShow,
+        .accountShow {
+            transition: 0s;
+        }
+
+        .plusIcon {
+            background-color: #003366;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            margin: 10px 0 -2px 5px;
+        }
+
+        .plusIcon::before {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background-color: #FF7300;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .plusIcon::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background-color: orange;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            transition: .3s;
+        }
+
+        .plusIcon.minus::after {
+            transform: translate(-50%, -50%);
+        }
+
+        .contentVv {
+            width: 100%;
+            height: 300px;
+        }
+
+        @media (max-width:576px) {
+            .navBarVv {
+                margin: 10px 30px;
+                position: relative;
+            }
+
+            .logoWrapVv {
+                width: 130px;
+            }
+
+            .mainMenuVv {
+                display: none;
+            }
+
+            .menuIconVv {
+                display: block;
+            }
+
+            .iconWrapVv>ul>li {
+                margin: 0px 0px;
+            }
+
+            .iconWrapVv img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .iconWrapVv .cartIconVv {
+                margin: 0px 12px;
+            }
+
+            .dropDownAccountVv {
+                /* display: none; */
+                display: block;
+                width: 90%;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .dropDownCartVv {
+                display: block;
+                /* display: none; */
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .dropDownMenuVv.hide {
+                /* display: none; */
+                height: 0px;
+                border: 0px solid #003366;
+            }
+
+            .dropDownMenuVv {
+                display: block;
+                /* display: none; */
+                position: absolute;
+                text-align: center;
+                margin-top: 10px;
+                line-height: 2rem;
+                border: 1px solid #003366;
+                padding: 0px 20px;
+                border-radius: 10px;
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 133px;
+                overflow: hidden;
+                transition: height .3s ease-in, border .25s linear;
+            }
+
+            .menuShow,
+            .cartShow,
+            .accountShow {
+                transition: 0s;
+            }
+
+            .dropDownMenuVv li {
+                border-bottom: 1px solid #003366;
+            }
+
+            .dropDownMenuVv li:nth-last-child(1) {
+                border-bottom: none;
+            }
+
+        }
+
+        /* 以下為footer */
+        .footerVv {
+            width: 100%;
+            background-color: #003366;
+            color: #FFF;
+            margin: 0px auto;
+        }
+
+        .footerContentVv {
+            width: 100%;
+            margin: 0px auto;
+            padding: 40px 0px;
+            text-align: center;
+            font-size: 12px;
+            /* padding: 40px auto; */
+        }
+
+        .flexWrap ul {
+            display: flex;
+            justify-content: center;
+            padding-left: 0px;
+            margin-bottom: 0px;
+        }
+
+        .flexWrap ul li {
+            list-style-type: none;
+            margin: 0px 10px;
+            font-size: 12px;
+        }
+
+        .flexWrap ul li a {
+            text-decoration: none;
+            color: #FFF;
+            font-size: 12px;
+        }
+
+        .footerContentVv p {
+            margin-bottom: 0px;
+        }
+
+        @media (max-width:576px) {
+            .footerContentVv {
+                font-size: 10px;
+                padding: 16px 0px;
+            }
+
+            .flexWrap ul li a {
+                font-size: 10px;
+            }
+        }
+
+        /* 以上公版 */
+
+
+        .container {
+
+            /* border: red 1px solid; */
+
+
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #003366;
+        }
+
+        .menu-list-anne {
+            /* border: red 1px solid; */
+
+
+
+        }
+
+        .profile-list-anne {
+            /* border: red 1px solid; */
+
+
+
+
+        }
+
+
+
+        .breadcrumb {
+
+            background-color: rgba(255, 255, 255, 0);
+            font-size: 16px;
+            /* border: red 1px solid; */
+            width: 260px;
+
+
+
+        }
+
+        .breadcrumb a {
+            color: #FF7300;
+
+        }
+
+        .profile-page-title {
+
+            padding-top: 6.7rem;
+            margin-bottom: 1rem;
+            /* border: red 1px solid; */
+
+
+
+
+
+        }
+
+
+
+
+        .card {
+            /* border: red 1px solid; */
+            display: flex;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 3rem;
+            border-color: #FFF;
+
+
+
+        }
+
+        .card-list {
+            display: flex;
+            justify-content: center;
+
+        }
+
+
+        .menubar-anne {
+            border: #CECECF 1px solid;
+            border-radius: 1rem;
+            width: 260px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+
+        }
+
+        .list-group {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+
+
+        .menu-content-anne {
+            border-top: #CECECF 1px solid;
+            padding-top: 15px;
+
+
+        }
+
+        .form-anne {
+            margin-bottom: 8px;
+
+        }
+
+        .page-btn {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .page-btn a {
+            background-color: #003366;
+            color: #FFF;
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        .page-item {
+
+            margin-left: 10px;
+        }
+
+        .fas {
+            color: #CECECF;
+            margin-left: 10px;
+        }
+
+
+        input[type='range'] {
+            overflow: hidden;
+            width: 80px;
+            -webkit-appearance: none;
+            background-color: #9a905d;
+        }
+
+        input[type='range']::-webkit-slider-runnable-track {
+            height: 10px;
+            -webkit-appearance: none;
+            color: #13bba4;
+            margin-top: -1px;
+        }
+
+        input[type='range']::-webkit-slider-thumb {
+            width: 10px;
+            -webkit-appearance: none;
+            height: 10px;
+            cursor: ew-resize;
+            background: #434343;
+            box-shadow: -80px 0 0 80px #43e5f7;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navBarOutVv">
+        <div class="navBarVv">
+            <div class="logoWrapVv">
+                <img src="./img/logo.svg" alt="">
+                <!-- <svg>
+                    <use xlink:href="./svg2.svg#LOGO"></use>
+                </svg> -->
+            </div>
+            <div class="navBarRightVv">
+                <div class="mainMenuVv">
+                    <ul>
+                        <li><a href="#">關於我們</a></li>
+                        <li><a href="#">精選行程</a></li>
+                        <li><a href="#">認識好友</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="iconWrapVv">
+                    <ul>
+                        <li class="accountIconVv"><a href="#">
+                                <img src="./img/account.svg" alt="">
+                            </a>
+                            <ul class="dropDownAccountVv hide">
+                                <li><a href="#">登入/註冊</a>
+                                </li>
+                                <li class="memberVv">會員中心<div class="plusIcon "></div>
+                                    <ul class="memberVvSubMenu hide ">
+                                        <li><a href="#">好友列表</a></li>
+                                        <li><a href="#">收信夾</a></li>
+                                        <li><a href="#">優惠券</a></li>
+                                        <li><a href="#">交友個人頁</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">登出</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="cartIconVv"><a href="#"><img src="./img/cart.svg" alt=""></a>
+                            <ul class="dropDownCartVv hide">
+                                <li><a href="#">待結帳清單</a></li>
+                                <li><a href="#">已購買行程</a></li>
+                                <li><a href="#">收藏行程</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuIconVv"><a href="#">
+                                <img src="./img/menu.svg" alt="">
+                            </a>
+                            <ul class="dropDownMenuVv hide">
+                                <li><a href="#">關於我們</a></li>
+                                <li><a href="#">精選行程</a></li>
+                                <li><a href="#">認識好友</a></li>
+                                <li><a href="#">聯絡我們</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="contentVv"></div> -->
+
+
+    <div class="container friend-profile-page-anne">
+
+        <div class="row">
+
+            <!-- 左側menu -->
+            <section class="menu-list-anne col-12 col-md-5 col-lg-3">
+
+                <!-- 麵包屑 -->
+                <div class="menu">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#index-list-anne"> 首頁 > <a></li>
+                            <li class="breadcrumb-item"><a href="#profile-index"> 交友主頁 > <a></li>
+                            <li class="breadcrumb-item"><a href="#profile-search"> 交友搜尋 > <a></li>
+                            <li class="breadcrumb-item active" aria-current="page">北區</li>
+                        </ol>
+                    </nav>
+
+                    <div class="menubar-anne">
+                        <div class="list-group">
+                            <h3 class="menu-list">搜尋</h3>
+
+
+                            <h4 class="menu-content-anne">地區</h4>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">北區</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">中區</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">南區</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">東區</label>
+                            </div>
+
+
+
+                            <h4 class="menu-content-anne">性別</h4>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="Check1">男性</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="Check1">女性</label>
+                            </div>
+
+                            <h4 class="menu-content-anne">年齡</h4>
+                            <div class="form-anne">
+                                <form>
+                                    <div class="form-bar-anne d-flex">
+                                        18
+                                        <input type="range" class="form-control-range" id="formControlRange"
+                                            style="width: 200px;">
+                                        60+
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <h4 class="menu-content-anne">身高</h4>
+                            <div class="form-anne">
+                                <form>
+                                    <div class="form-bar-anne d-flex">
+                                        140
+                                        <input type="range" class="form-control-range" id="formControlRange"
+                                            style="width: 200px;">
+                                        180+
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <h4 class="menu-content-anne">最高學歷</h4>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">博士</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">研究所</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">大學</label>
+                            </div>
+                            <div class="form-anne">
+                                <input type="checkbox" class="form-check-input-anne">
+                                <label class="form-check-label" for="exampleCheck1">高中</label>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </section>
+
+            <!-- 右側交友列表 -->
+            <section class="profile-list-anne col-12 col-md-7 col-lg-9">
+
+
+                <div class="area-title">
+                    <h3 class="profile-page-title">北區 </h3>
+
+                    <div class="card-list row">
+
+                        <div class="card align-items-center" style="width: 260px; ">
+
+                            <img src="./已裁切 (比例 5_7)/女/2.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">何宜</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/3.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">張玉</h5>
+                                <p class="card-text">26歲 新手入門</p>
+
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/4.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">侯佳瑩</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="card-list row">
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/5.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">陳儀</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/6.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">陳薇</h5>
+                                <p class="card-text">26歲 中階騎手</p>
+
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/7.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">楊渝欣</h5>
+                                <p class="card-text">26歲 專業騎行</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-list row">
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/9.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">李曉瑄</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/1.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">朱潔怡</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/10.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">林湘芸</h5>
+                                <p class="card-text">26歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card-list row">
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/11.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">徐曼鈞</h5>
+                                <p class="card-text">27歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/12.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">張鉯喬</h5>
+                                <p class="card-text">27歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card align-items-center" style="width: 260px; ">
+                            <img src="./已裁切 (比例 5_7)/女/profile-23.jpg" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">張本岳</h5>
+                                <p class="card-text">27歲 新手入門</p>
+                                <div class="btn-media-anne d-flex mt-3">
+                                    <a href=""><i class="fas fa-user-plus"></i></a>
+                                    <a href=""> <i class="fas fa-envelope"></i></a>
+                                    <a href=""> <i class="fas fa-heart"></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="page-btn ">
+                        <nav aria-label="profile-Page navigation ">
+                            <ul class="pagination ">
+                                <li class="page-item ">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="footerVv">
+        <div class="footerContentVv">
+            <div class="flexWrap">
+                <ul>
+                    <li>
+                        <a href="#">會員服務條款</a>
+                    </li>
+                    <li>
+                        <a href="#">隱私權聲明</a>
+                    </li>
+                </ul>
+            </div>
+            <p>© 2021 Bike N Go, All Rights Reserved</p>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/57aa3e59b9.js" crossorigin="anonymous"></script>
+
+    <script src="./jquery-3.6.0.js"></script>
+
+    <script>
+        $('body').click(function () {
+            console.log('body click');
+            $('.dropDownAccountVv').addClass('hide');
+            $('.memberVvSubMenu').addClass('hide');
+            $('.dropDownCartVv').addClass('hide');
+            $('.dropDownMenuVv').addClass('hide');
+        })
+
+        $('.accountIconVv').click(function () {
+            event.stopPropagation();
+            console.log('accountIconVv click');
+            $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
+
+            $('.dropDownAccountVv').toggleClass('hide');
+
+            $('.dropDownCartVv').addClass('hide').addClass('accountShow');
+            $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
+        })
+
+        $('.memberVv').click(function () {
+            event.stopPropagation();
+            console.log('memberVv click');
+            $('.memberVvSubMenu').toggleClass('hide');
+            $('.plusIcon').toggleClass('minus');
+
+        })
+
+        $('.cartIconVv').click(function () {
+            event.stopPropagation();
+            console.log('cartIconVv');
+
+            // $('.dropDownMenuVv').addClass('cartShow');
+            $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
+            $('.dropDownCartVv').toggleClass('hide');
+            $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
+            $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
+        })
+
+        $('.menuIconVv').click(function () {
+            event.stopPropagation();
+            $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
+            $('.dropDownMenuVv').toggleClass('hide');
+            $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
+            $('.dropDownCartVv').addClass('hide').addClass('menuShow');
+        })
+
+        // let scrollLast = 0;
+
+        // $(window).scroll(function () {
+        //     console.log('scroll top', $(this).scrollTop());
+        //     let scrollNow = $(this).scrollTop();
+
+
+        //     if (scrollNow <= 300) {
+        //         $('.navBarOutVv').removeClass('hideNav');
+        //     }
+        //     else {
+        //         if (scrollLast < scrollNow) {
+        //             console.log('往下');
+        //             $('.navBarOutVv').addClass('hideNav');
+        //         }
+        //         else {
+        //             console.log('往上');
+        //             $('.navBarOutVv').removeClass('hideNav');
+        //         }
+        //     }
+        //     scrollLast = scrollNow;
+        // })
+    </script>
+
+
+</body>
+
+</html>
