@@ -73,6 +73,7 @@
 
 .profile-infotitle-anne h2 {
     padding-right: 1rem;
+    
 }
 
 .profile-infotitle-anne {
@@ -149,4 +150,59 @@
 .bcg-color {
 
     background-color: #F1F1F1;
+}
+
+
+@media (max-width:576px) {
+
+    .profile-infotitle-anne h2 {
+        font-size: 30px;
+    }
+    .profile-infotitle-anne h5 {
+        font-size: 16px;
+    }
+
+
+    .intro-profile-anne h5{
+        font-size: 14px;
+    }
+
+    .intro-profile-anne h2{
+        font-size: 20px;
+    }
+
+
+
+
+    .btn-01-anne{
+        font-size: 12px;
+        margin-right: 1rem;
+
+    }
+
+
+    .btn-02-anne{
+        font-size: 12px;
+        margin-right: 1rem;
+
+    }
+
+    .level-mark-anne{
+        margin-top: 1.5rem;
+        height: 25px;
+        width: 90px;
+
+
+    }
+    .level-mark-anne h6{
+        font-size: 14px;
+        width: 100%;
+        
+
+    }
+
+    .profile-infotitle-anne h2 {
+        font-size: 30px;
+        
+    }
 }
