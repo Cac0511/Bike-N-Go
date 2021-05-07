@@ -12,66 +12,68 @@
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./slick.css">
+    <link rel="stylesheet" href="./BNG.header.css">
     <link rel="stylesheet" href="./profile_page.css">
+    <link rel="stylesheet" href="./BNG.footer.css">
 
 
-   
+
+
 
 </head>
 
 <body>
+    <!-- header -->
     <div class="navBarOutVv">
         <div class="navBarVv">
             <div class="logoWrapVv">
-                <img src="./img/logo.svg" alt="">
-                <!-- <svg>
-                    <use xlink:href="./svg2.svg#LOGO"></use>
-                </svg> -->
+                <img class="img100Vv" src="./img/logo.svg" alt="">
             </div>
             <div class="navBarRightVv">
                 <div class="mainMenuVv">
-                    <ul>
-                        <li><a href="#">關於我們</a></li>
-                        <li><a href="#">精選行程</a></li>
-                        <li><a href="#">認識好友</a></li>
-                        <li><a href="#">聯絡我們</a></li>
+                    <ul class="mainMenuUlVv">
+                        <li><a class="AVv" href="#hpAboutUsVv">關於我們</a></li>
+                        <li><a class="AVv" href="#hpSelectedTripVv">精選行程</a></li>
+                        <li><a class="AVv" href="#hpFriendVv">認識好友</a></li>
+                        <li><a class="AVv" href="#hpContactUsVv">聯絡我們</a></li>
                     </ul>
                 </div>
                 <div class="iconWrapVv">
-                    <ul>
+                    <ul class="iconWrapUlVv">
                         <li class="accountIconVv"><a href="#">
-                                <img src="./img/account.svg" alt="">
+                                <img class="img100Vv" src="./img/account.svg" alt="">
                             </a>
                             <ul class="dropDownAccountVv hide">
-                                <li><a href="#">登入/註冊</a>
+                                <li><a class="AVv" href="#">登入/註冊</a>
                                 </li>
                                 <li class="memberVv">會員中心<div class="plusIcon "></div>
                                     <ul class="memberVvSubMenu hide ">
-                                        <li><a href="#">好友列表</a></li>
-                                        <li><a href="#">收信夾</a></li>
-                                        <li><a href="#">優惠券</a></li>
-                                        <li><a href="#">交友個人頁</a></li>
+                                        <li><a class="AVv" href="#">好友列表</a></li>
+                                        <li><a class="AVv" href="#">收信夾</a></li>
+                                        <li><a class="AVv" href="#">優惠券</a></li>
+                                        <li><a class="AVv" href="#">交友個人頁</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">登出</a></li>
+                                <li><a class="AVv" href="#">登出</a></li>
                             </ul>
                         </li>
 
-                        <li class="cartIconVv"><a href="#"><img src="./img/cart.svg" alt=""></a>
+                        <li class="cartIconVv"><a class="AVv" href="#"><img class="img100Vv" src="./img/cart.svg"
+                                    alt=""></a>
                             <ul class="dropDownCartVv hide">
-                                <li><a href="#">待結帳清單</a></li>
-                                <li><a href="#">已購買行程</a></li>
-                                <li><a href="#">收藏行程</a></li>
+                                <li><a class="AVv" href="#">待結帳清單</a></li>
+                                <li><a class="AVv" href="#">已購買行程</a></li>
+                                <li><a class="AVv" href="#">收藏行程</a></li>
                             </ul>
                         </li>
-                        <li class="menuIconVv"><a href="#">
-                                <img src="./img/menu.svg" alt="">
+                        <li class="menuIconVv"><a class="AVv" href="#">
+                                <img class="img100Vv" src="./img/menu.svg" alt="">
                             </a>
                             <ul class="dropDownMenuVv hide">
-                                <li><a href="#">關於我們</a></li>
-                                <li><a href="#">精選行程</a></li>
-                                <li><a href="#">認識好友</a></li>
-                                <li><a href="#">聯絡我們</a></li>
+                                <li><a class="AVv" href="#hpAboutUsVv">關於我們</a></li>
+                                <li><a class="AVv" href="#hpSelectedTripVv">精選行程</a></li>
+                                <li><a class="AVv" href="#hpFriendVv">認識好友</a></li>
+                                <li><a class="AVv" href="#hpContactUsVv">聯絡我們</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -80,6 +82,30 @@
         </div>
     </div>
 
+    <div class="topButtonWrapVv">
+    </div>
+    <!-- 頁內連結只能放#id，JQ click的權限通常較大，除非a換頁才不會被JQ的權限覆蓋-->
+
+    <!-- <div class="contentVv">
+        <h1>從這開始放你的內容</h1>
+    </div> -->
+    <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
+
+    <div id="foot" class="footerVv">
+        <div class="footerContentVv">
+            <div class="flexWrapVv">
+                <ul class="flexWrapUlVv">
+                    <li>
+                        <a class="AVv" href="#">會員服務條款</a>
+                    </li>
+                    <li>
+                        <a class="AVv" href="#">隱私權聲明</a>
+                    </li>
+                </ul>
+            </div>
+            <p>© 2021 Bike N Go, All Rights Reserved</p>
+        </div>
+    </div>
 
 
     <div class="bcg-color">
@@ -91,7 +117,7 @@
             <section class="menu-list-anne col-12 col-md-9 col-lg-10">
 
                 <!-- 麵包屑 -->
-                <div class="menu">
+                <div class="menu mt-5">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#index-list-anne"> 首頁 > <a></li>
@@ -259,82 +285,84 @@
 
         <!-- footer -->
         <div class="footerVv">
-            <div class="footerContentVv">
-                <div class="flexWrap">
-                    <ul>
-                        <li>
-                            <a href="#">會員服務條款</a>
-                        </li>
-                        <li>
-                            <a href="#">隱私權聲明</a>
-                        </li>
-                    </ul>
+            <div id="foot" class="footerVv">
+                <div class="footerContentVv">
+                    <div class="flexWrapVv">
+                        <ul class="flexWrapUlVv">
+                            <li>
+                                <a class="AVv" href="#">會員服務條款</a>
+                            </li>
+                            <li>
+                                <a class="AVv" href="#">隱私權聲明</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>© 2021 Bike N Go, All Rights Reserved</p>
                 </div>
-                <p>© 2021 Bike N Go, All Rights Reserved</p>
             </div>
-        </div>
 
-        <!--  Simple Carousel/Slideshow Plugin - jQuery mibreitGallery -->
+            <!--  Simple Carousel/Slideshow Plugin - jQuery mibreitGallery -->
 
-        <!-- <link rel="stylesheet" href="./carousel-slideshow/dist/mibreit-gallery/css/mibreitGallery.css">
+            <!-- <link rel="stylesheet" href="./carousel-slideshow/dist/mibreit-gallery/css/mibreitGallery.css">
         <script src="./carousel-slideshow/dist/mibreit-gallery/mibreitGallery.min.js"></script> -->
 
 
 
 
 
-        <script src="https://kit.fontawesome.com/57aa3e59b9.js" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/57aa3e59b9.js" crossorigin="anonymous"></script>
 
-        <!-- <script src="requires util.js"></script> -->
+            <!-- <script src="requires util.js"></script> -->
+            <script src="./BNG.header.js"></script>
 
-        <script src="./jquery-3.6.0.js"></script>
+            <script src="./jquery-3.6.0.js"></script>
 
-        <script>
-            $('body').click(function () {
-                console.log('body click');
-                $('.dropDownAccountVv').addClass('hide');
-                $('.memberVvSubMenu').addClass('hide');
-                $('.dropDownCartVv').addClass('hide');
-                $('.dropDownMenuVv').addClass('hide');
-            })
+            <script>
+                $('body').click(function () {
+                    console.log('body click');
+                    $('.dropDownAccountVv').addClass('hide');
+                    $('.memberVvSubMenu').addClass('hide');
+                    $('.dropDownCartVv').addClass('hide');
+                    $('.dropDownMenuVv').addClass('hide');
+                })
 
-            $('.accountIconVv').click(function () {
-                event.stopPropagation();
-                console.log('accountIconVv click');
-                $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
+                $('.accountIconVv').click(function () {
+                    event.stopPropagation();
+                    console.log('accountIconVv click');
+                    $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
 
-                $('.dropDownAccountVv').toggleClass('hide');
+                    $('.dropDownAccountVv').toggleClass('hide');
 
-                $('.dropDownCartVv').addClass('hide').addClass('accountShow');
-                $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
-            })
+                    $('.dropDownCartVv').addClass('hide').addClass('accountShow');
+                    $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
+                })
 
-            $('.memberVv').click(function () {
-                event.stopPropagation();
-                console.log('memberVv click');
-                $('.memberVvSubMenu').toggleClass('hide');
-                $('.plusIcon').toggleClass('minus');
+                $('.memberVv').click(function () {
+                    event.stopPropagation();
+                    console.log('memberVv click');
+                    $('.memberVvSubMenu').toggleClass('hide');
+                    $('.plusIcon').toggleClass('minus');
 
-            })
+                })
 
-            $('.cartIconVv').click(function () {
-                event.stopPropagation();
-                console.log('cartIconVv');
+                $('.cartIconVv').click(function () {
+                    event.stopPropagation();
+                    console.log('cartIconVv');
 
-                // $('.dropDownMenuVv').addClass('cartShow');
-                $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
-                $('.dropDownCartVv').toggleClass('hide');
-                $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
-                $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
-            })
+                    // $('.dropDownMenuVv').addClass('cartShow');
+                    $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
+                    $('.dropDownCartVv').toggleClass('hide');
+                    $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
+                    $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
+                })
 
-            $('.menuIconVv').click(function () {
-                event.stopPropagation();
-                $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
-                $('.dropDownMenuVv').toggleClass('hide');
-                $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
-                $('.dropDownCartVv').addClass('hide').addClass('menuShow');
-            })
+                $('.menuIconVv').click(function () {
+                    event.stopPropagation();
+                    $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
+                    $('.dropDownMenuVv').toggleClass('hide');
+                    $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
+                    $('.dropDownCartVv').addClass('hide').addClass('menuShow');
+                })
 
         // let scrollLast = 0;
 
@@ -358,21 +386,22 @@
         //     }
         //     scrollLast = scrollNow;
         // })
-        </script>
+            </script>
 
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <script type="text/javascript"
+                src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-        <script>
-            $('.card-deck').slick({
-                // dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                centerMode: true,
-                variableWidth: true
-            });
+            <script>
+                $('.card-deck').slick({
+                    // dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    centerMode: true,
+                    variableWidth: true
+                });
 
-        </script>
+            </script>
 
 </body>
 
