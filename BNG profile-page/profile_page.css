@@ -13,6 +13,14 @@
 
 }
 
+.slick-slider{
+width: 750px;    
+}
+
+.slick-next{
+    right: 100px;
+}
+
 .profile-info-anne {
     border: #CECECF 1px solid;
     border-radius: 1rem;
@@ -20,7 +28,7 @@
     background-color: #fff;
     padding: 5rem 3rem;
     margin-bottom: 5rem;
-
+    width: 750px; 
 
 
 
