@@ -159,9 +159,14 @@ width: 750px;
 
     background-color: #F1F1F1;
 }
+@media (max-width:1200px) {
+    .slick-next {right: 120px;
+    }
 
-
+}
 @media (max-width:576px) {
+    .profile-info-anne {
+        width: 300px;}
 
     .profile-infotitle-anne h2 {
         font-size: 30px;
@@ -213,4 +218,12 @@ width: 750px;
         font-size: 30px;
         
     }
+    
+    .slick-next {right: 540px;
+    }
+
+    .slick-prev { bottom: 10px;
+
+    }
+
 }
